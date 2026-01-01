@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CityFix — Премиальный ремонт квартир</title>
+
+<style>
+:root {
+  --bg: #0b0f1a;
+  --card: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.12);
+  --accent: #ff8a00;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #111827, #020617);
+  color: var(--text);
+}
+
+/* ====== LAYOUT ====== */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+/* ====== HERO ====== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, var(--accent), #ffd000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 34px;
+  background: linear-gradient(135deg, var(--accent), #ffd000);
+  color: #000;
+  font-weight: 600;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(255,138,0,.35);
+}
+
+/* ====== SECTIONS ====== */
+section h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  backdrop-filter: blur(12px);
+}
+
+/* ====== ADVANTAGES ====== */
+.advantages {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card strong {
+  font-size: 18px;
+}
+
+.card p {
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* ====== SERVICES ====== */
+.services {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* ====== STEPS ====== */
+.steps {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  counter-reset: step;
+}
+
+.step::before {
+  counter-increment: step;
+  content: "0" counter(step);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ====== REVIEWS ====== */
+.review {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.review span {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+/* ====== FORM ====== */
+.form {
+  max-width: 500px;
+  margin: auto;
+}
+
+form {
+  display: grid;
+  gap: 18px;
+}
+
+input {
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  font-size: 16px;
+}
+
+input::placeholder {
+  color: #9ca3af;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ====== MOBILE ====== */
+@media (max-width: 600px) {
+  .container {
+    padding: 60px 16px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero container">
+  <div class="hero-content">
+    <h1>Премиальный <span>ремонт квартир</span><br>под ключ</h1>
+    <p>
+      Чёткие сроки, прозрачная смета и контроль качества
+      на каждом этапе работ.
+    </p>
+    <a href="#form" class="btn">Рассчитать стоимость</a>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="container">
+  <h2>Почему выбирают CityFix</h2>
+  <div class="grid advantages">
+    <div class="card">
+      <strong>Фиксированная цена</strong>
+      <p>Стоимость не меняется после подписания договора</p>
+    </div>
+    <div class="card">
+      <strong>Контроль качества</strong>
+      <p>Прораб проверяет каждый этап работ</p>
+    </div>
+    <div class="card">
+      <strong>Чёткие сроки</strong>
+      <p>Сдаём объект точно по графику</p>
+    </div>
+    <div class="card">
+      <strong>Гарантия 2 года</strong>
+      <p>На все виды выполненных работ</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="container">
+  <h2>Наши услуги</h2>
+  <div class="grid services">
+    <div class="card">Косметический ремонт</div>
+    <div class="card">Капитальный ремонт</div>
+    <div class="card">Ремонт новостроек</div>
+    <div class="card">Электрика и сантехника</div>
+    <div class="card">Дизайн и отделка</div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="container">
+  <h2>Как мы работаем</h2>
+  <div class="grid steps">
+    <div class="card step">Заявка и консультация</div>
+    <div class="card step">Замеры и смета</div>
+    <div class="card step">Договор</div>
+    <div class="card step">Ремонт</div>
+    <div class="card step">Сдача объекта</div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="container">
+  <h2>Отзывы клиентов</h2>
+  <div class="grid">
+    <div class="card review">
+      ⭐⭐⭐⭐⭐  
+      <p>Ремонт сделали аккуратно и без нервов. Всё как договаривались.</p>
+      <span>Анна, 2-комнатная квартира</span>
+    </div>
+    <div class="card review">
+      ⭐⭐⭐⭐⭐  
+      <p>Цена не выросла, сроки соблюли. Очень доволен.</p>
+      <span>Игорь, новостройка</span>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="container" id="form">
+  <h2>Рассчитать стоимость ремонта</h2>
+  <div class="form card">
+    <form>
+      <input type="text" placeholder="Ваше имя">
+      <input type="tel" placeholder="Телефон">
+      <button class="btn">Получить расчёт</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2026 CityFix · Премиальный ремонт квартир
+</footer>
+
+</body>
+</html>
