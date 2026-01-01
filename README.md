@@ -49,4 +49,4 @@
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/USERNAME/cityfix-landing.git
+git clone https://github.com/MIGHOST935/Example-2.git
